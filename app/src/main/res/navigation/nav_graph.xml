@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.taxi.apnisawari.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.taxi.apnisawari.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_mainScreen"
+            app:destination="@id/mainScreen" />
+        <action
+            android:id="@+id/action_registerFragment_to_registerDriver"
+            app:destination="@id/registerDriver" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.taxi.apnisawari.OtpFragment"
+        android:label="OtpFragment" >
+        <action
+            android:id="@+id/action_otpFragment_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="com.taxi.apnisawari.MainScreen"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" />
+    <fragment
+        android:id="@+id/registerDriver"
+        android:name="com.taxi.apnisawari.RegisterDriver"
+        android:label="fragment_register_driver"
+        tools:layout="@layout/fragment_register_driver" />
+</navigation>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintotp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+        tools:context=".navigation_view.home.view.OtpFragment">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
+            android:text="ENTER OTP"
+            android:textColor="@color/black"
+            android:textSize="50sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_title2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:text="Please enter the verification code sent to your number"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_edtotp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title2">
+
+            <EditText
+                android:id="@+id/edt1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/otp_block"
+                android:backgroundTint="@color/otpblock"
+                android:ems="10"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="30dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/edt2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edt2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/otp_block"
+                android:backgroundTint="@color/otpblock"
+                android:ems="10"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="30dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/edt3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/edt1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/edt3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/otp_block"
+                android:backgroundTint="@color/otpblock"
+                android:ems="10"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="30dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/edt4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/edt2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/otp_block"
+                android:backgroundTint="@color/otpblock"
+                android:ems="10"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                app:boxStrokeColor="#47C1D2"
+                android:minWidth="30dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/edt5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/edt3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edt5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/otp_block"
+                android:backgroundTint="@color/otpblock"
+                android:ems="10"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="30dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/edt6"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/edt4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edt6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/otp_block"
+                android:backgroundTint="@color/otpblock"
+                android:ems="10"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="30dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/edt5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txt_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cons_edtotp" />
+
+        <TextView
+            android:id="@+id/txt_timer_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_resend_otp_title" />
+
+        <TextView
+            android:id="@+id/txt_resend_otp_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Didn’t receive OTP ?"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/txt_resend_otp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_timer" />
+
+        <TextView
+            android:id="@+id/txt_resend_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="resend"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/txt_resend_otp_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_timer" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOtp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#47C1D2"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_resend_otp"
+            app:layout_constraintVertical_bias="0.92" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

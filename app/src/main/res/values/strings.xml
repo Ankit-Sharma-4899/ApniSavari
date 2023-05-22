@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ApniSawari</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_pick_of_rides_at_nlow_prices">Your pick of rides at\nlow prices.</string>
+    <string name="my_location_here">My location here</string>
+    <string name="today">Today</string>
+    <string name="find_captain">Find Captain</string>
+    <string name="enter_your_phone_number_a_verification_code_will_be_sent_to_your_phone_number">Enter your Phone number.A Verification code will be sent to your Phone number</string>
+    <string name="enter_your_phone_number_to_get_otp">Enter your Phone number to get OTP</string>
+    <string name="apnisawari">ApniSawari</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="welcome_to_apnisawari">Welcome to ApniSawari</string>
+
+</resources>

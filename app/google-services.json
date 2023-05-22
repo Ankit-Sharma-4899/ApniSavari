@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "632292303657",
+    "project_id": "apnisawari-1fe81",
+    "storage_bucket": "apnisawari-1fe81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632292303657:android:6627322ae2074663210d38",
+        "android_client_info": {
+          "package_name": "com.taxi.apnisawari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632292303657-a1rukr5c9ulku19alk6ikoglukleuvbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbkT9wrSUeMba3y2_wivaC2dIbHIf3laA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632292303657-a1rukr5c9ulku19alk6ikoglukleuvbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

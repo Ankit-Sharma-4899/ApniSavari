@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SplashFragment">
+
+    <ImageView
+        android:id="@+id/splashImage"
+        android:layout_width="0dp"
+        android:layout_height="170dp"
+        android:src="@drawable/splashlogo"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/welcome"-->
+<!--        android:text="Apni Sawari"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:gravity="center"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/splashImage"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:textSize="40dp"-->
+<!--        android:textColor="@color/black"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Version 1.0"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:layout_marginBottom="5dp"/>
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/splash_side"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"/>-->
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/splash_side2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
