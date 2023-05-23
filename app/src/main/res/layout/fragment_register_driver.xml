@@ -6,6 +6,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/registerdriverlayout"
     android:background="@drawable/loginbg"
     tools:context=".RegisterDriver">
 
@@ -39,6 +40,7 @@
             android:layout_height="wrap_content"
             android:text="@string/welcome_to_apnisawari"
             android:layout_gravity="center"
+            android:fontFamily="@font/work_sans_semibold"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="25sp"/>
@@ -48,7 +50,8 @@
             android:text="Register as a Driver"
             android:layout_gravity="center"
             android:textColor="@color/black"
-            android:textStyle="bold"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/work_sans_semibold"
             android:textSize="25sp"/>
         <TextView
             android:layout_width="wrap_content"
@@ -56,11 +59,12 @@
             android:text="@string/enter_your_phone_number_to_get_otp"
             android:textStyle="bold"
             android:textSize="20sp"
+            android:fontFamily="@font/roboto"
             android:layout_marginHorizontal="16dp"
             android:gravity="center"
             android:textColor="@color/black"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="5dp"/>
         <com.google.android.material.textfield.TextInputLayout
             style="@style/LoginTextInputLayoutStyle"
             android:layout_width="match_parent"

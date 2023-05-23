@@ -1,5 +1,6 @@
 package com.taxi.apnisawari
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
@@ -41,9 +43,7 @@ private lateinit var binding: FragmentRegisterBinding
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding.registerasdriver.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_registerDriver)
-        }
+
         // Inflate the layout for this fragment
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = requireActivity()
@@ -51,10 +51,10 @@ private lateinit var binding: FragmentRegisterBinding
         binding.phonenumber.requestFocus()
         auth = FirebaseAuth.getInstance()
         binding.btngetotp.setOnClickListener {
-            AppUtils.showProgressBar(requireContext(),"Please wait", "Generating otp..")
                var number = binding.phonenumber.text?.trim().toString()
                 if (number.isNotEmpty()){
                     if (number.length == 10){
+                        AppUtils.showProgressBar(requireContext(),"Please wait", "Generating otp..")
                         sendVerificationCode("+91" + binding.phonenumber.text.toString())
 
                     }else{
@@ -72,6 +72,9 @@ private lateinit var binding: FragmentRegisterBinding
             if (combineOtp.isNotEmpty())
                 verifyCode(combineOtp)
         }
+        binding.registerasdriver.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_registerDriver)
+        }
         attachTextWatchersSMS()
         binding.txtResendOtp.setOnClickListener {
             binding.edt1.text = null
@@ -84,10 +87,16 @@ private lateinit var binding: FragmentRegisterBinding
             sendVerificationCode("+91" + binding.phonenumber.text.toString())
 
         }
-
+        binding.registerlayout.setOnClickListener {
+            it.hidekeyboard()
+        }
         return binding.root
     }
-    fun sendVerificationCode(number: String) {
+    fun View.hidekeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
+    }
+    private fun sendVerificationCode(number: String) {
         val options = PhoneAuthOptions.newBuilder(auth)
             .setPhoneNumber(number) // Phone number to verify
             .setTimeout(30L, TimeUnit.SECONDS) // Timeout and unit
@@ -106,10 +115,10 @@ private lateinit var binding: FragmentRegisterBinding
             override fun onTick(millisUntilFinished: Long) {
                 // Used for formatting digit to be in 2 digits only
                 val f = DecimalFormat("00")
-                val min = millisUntilFinished / 60000 % 60
+               // var min = millisUntilFinished / 60000 % 60
                 val sec = millisUntilFinished / 1000 % 60
                 binding.txtTimer.text =
-                    "00 : ${f.format(sec)}"
+                    "Resend in 00 : ${f.format(sec)}"
                 binding.txtResendOtp.isEnabled = false
                 binding.txtResendOtp.visibility = View.INVISIBLE
                 binding.txtResendOtpTitle.visibility = View.INVISIBLE
@@ -150,7 +159,7 @@ private lateinit var binding: FragmentRegisterBinding
             }
             .addOnFailureListener {
                 AppUtils.hideprogressbar()
-                Toast.makeText(requireContext(), "Something Went Wrong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Please Enter Correct OTP", Toast.LENGTH_SHORT).show()
             }
     }
 
@@ -216,6 +225,7 @@ private lateinit var binding: FragmentRegisterBinding
             AppUtils.hideprogressbar()
             binding.mobileNumberScreen.visibility=View.GONE
             binding.constraintotp.visibility=View.VISIBLE
+            binding.registerasdriver.visibility=View.GONE
             // The SMS verification code has been sent to the provided phone number, we
             // now need to ask the user to enter the code and then construct a credential
             // by combining the code with a verification ID.

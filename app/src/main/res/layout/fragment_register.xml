@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/loginbg"
+        android:id="@+id/registerlayout"
         tools:context=".ForgetPasswordFragment">
 
         <LinearLayout
@@ -40,9 +41,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/welcome_to"
+                    android:text="Welcome to ApniSawari"
                     android:layout_gravity="center"
                     android:textStyle="bold"
+                    android:fontFamily="@font/work_sans_semibold"
                     android:textColor="@color/black"
                     android:textSize="25sp"/>
                 <TextView
@@ -51,6 +53,7 @@
                     android:text="@string/apnisawari"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
+                    android:visibility="gone"
                     android:textStyle="bold"
                     android:textSize="25sp"/>
                 <TextView
@@ -62,6 +65,7 @@
                     android:layout_marginHorizontal="16dp"
                     android:gravity="center"
                     android:textColor="@color/black"
+                    android:fontFamily="@font/roboto"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"/>
                 <com.google.android.material.textfield.TextInputLayout
@@ -109,6 +113,7 @@
                         android:layout_marginStart="30dp"
                         android:gravity="center"
                         android:text="@string/get_otp"
+                        android:fontFamily="@font/dm_sans_medium"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -126,13 +131,14 @@
 
                 <TextView
                     android:id="@+id/txt_title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginHorizontal="15dp"
                     android:layout_marginTop="50dp"
                     android:text="ENTER OTP"
                     android:textColor="@color/black"
                     android:textSize="50sp"
+                    android:fontFamily="@font/work_sans_semibold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -140,11 +146,12 @@
                     android:id="@+id/txt_title2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_marginEnd="15dp"
                     android:text="Please enter the verification code sent to your number"
                     android:textColor="@color/black"
+                    android:fontFamily="@font/roboto"
                     android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -277,9 +284,8 @@
                     android:id="@+id/txt_timer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
                     android:layout_marginTop="12dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="15dp"
                     android:text=""
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -365,6 +371,7 @@
             android:text="Register as Driver"
             android:textAllCaps="false"
             android:id="@+id/registerasdriver"
+            android:fontFamily="@font/dm_sans_medium"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
