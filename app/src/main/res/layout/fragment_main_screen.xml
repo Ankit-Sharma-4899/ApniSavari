@@ -72,26 +72,18 @@
             android:drawableStart="@drawable/baseline_location_on_24"
             android:enabled="false"
             android:text="@string/my_location_here"
+            android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
             android:textColor="@color/white"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/today"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:drawableStartCompat="@drawable/baseline_calendar_month_24" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="18dp"
             android:background="@drawable/rounded_corner2"
             android:backgroundTint="#47C1D2">
 

@@ -17,6 +17,8 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -25,6 +27,7 @@ import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import com.taxi.apnisawari.databinding.FragmentRegisterBinding
 import com.taxi.apnisawari.databinding.FragmentSplashBinding
+import com.taxi.apnisawari.ui.FirestoreViewModel
 import org.json.JSONObject
 import java.text.DecimalFormat
 import java.util.concurrent.TimeUnit
@@ -35,6 +38,7 @@ private lateinit var binding: FragmentRegisterBinding
     private lateinit var auth : FirebaseAuth
     private lateinit var countDownTimer: CountDownTimer
     lateinit var storedVerificationId: String
+    private val viewModel:FirestoreViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -66,6 +70,7 @@ private lateinit var binding: FragmentRegisterBinding
                 }
 
             }
+        print(viewModel.res.value.data)
         binding.btnsubmitotp.setOnClickListener {
             val combineOtp: String =
                 binding.edt1.text.toString() + binding.edt2.text.toString() + binding.edt3.text.toString() + binding.edt4.text.toString() + binding.edt5.text.toString() + binding.edt6.text.toString()
@@ -73,6 +78,7 @@ private lateinit var binding: FragmentRegisterBinding
                 verifyCode(combineOtp)
         }
         binding.registerasdriver.setOnClickListener {
+            Log.d("data", "${viewModel.res.value.data}")
             findNavController().navigate(R.id.action_registerFragment_to_registerDriver)
         }
         attachTextWatchersSMS()
@@ -182,6 +188,7 @@ private lateinit var binding: FragmentRegisterBinding
                 // we are setting that code to
                 // our OTP edittext field.
                 val edit1 = Editable.Factory.getInstance().newEditable(code[0].toString())
+
                 val edit2 = Editable.Factory.getInstance().newEditable(code[1].toString())
 
                 val edit3 = Editable.Factory.getInstance().newEditable(code[2].toString())
@@ -247,8 +254,8 @@ private lateinit var binding: FragmentRegisterBinding
         // credentials from our verification id and code.
         val credential = PhoneAuthProvider.getCredential(storedVerificationId, code)
 
-        // after getting credential we are
-        // calling sign in method.
+//         after getting credential we are
+//         calling sign in method.
         signInWithPhoneAuthCredential(credential)
     }
     private fun attachTextWatchersSMS() {
@@ -299,7 +306,7 @@ private lateinit var binding: FragmentRegisterBinding
             )
         )
     }
-    class GenericTextWatcher(private val currentView: EditText, nextView: EditText?) :
+    class GenericTextWatcher(private val currentView: EditText, nextView: EditText?):
         TextWatcher {
         private val nextView: EditText?
         override fun afterTextChanged(editable: Editable) {

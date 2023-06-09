@@ -27,7 +27,7 @@ class RegisterDriver : Fragment() {
         binding = FragmentRegisterDriverBinding.inflate(inflater,container,false)
         binding.lifecycleOwner = requireActivity()
         binding.executePendingBindings()
-        binding.registerdriverlayout.setOnClickListener {
+        binding.registerdriverlayout.setOnClickListener{
             it.hidekeyboard()
         }
         return binding.root
